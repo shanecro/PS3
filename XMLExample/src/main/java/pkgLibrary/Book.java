@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-public class Book extends Catalog {
+public class Book {
 
 	private String id;
 	private String author;
@@ -22,15 +22,15 @@ public class Book extends Catalog {
 	private String description;
 	        
 	public Book() {
-		this.id = 'bk123';
-		this.author = 'Shane Croce';
-		this.title = 'Practice Set 3: Doing Stuff, with Stuff!';
-		this.genre = 'Horror';
+		this.id = "bk123";
+		this.author = "Shane Croce";
+		this.title = "Practice Set 3: Doing Stuff, with Stuff!";
+		this.genre = "Horror";
 		this.price = 40.00;
 		this.cost = 32.00;
 		Date date = new Date();
 		this.publish_date = date;
-		this.description = 'Read and write an XML file and throw exceptions. Go Eagles';
+		this.description = "Read and write an XML file and throw exceptions. Go Eagles";
 				
 		
 	}

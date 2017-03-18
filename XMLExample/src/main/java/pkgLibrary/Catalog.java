@@ -37,7 +37,7 @@ public class Catalog  {
 		this.books = books;
 	}
 
-	private static void WriteXMLFile(Catalog cat) {
+	public static void WriteXMLFile(Catalog cat) {
 		try {
 
 			String basePath = new File("").getAbsolutePath();
@@ -58,7 +58,7 @@ public class Catalog  {
 		}
 	}
 
-	private static Catalog ReadXMLFile() {
+	public static Catalog ReadXMLFile() {
 
 		Catalog cat = null;
 

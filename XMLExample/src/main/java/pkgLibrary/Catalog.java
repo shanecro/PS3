@@ -120,14 +120,14 @@ public class Catalog {
 		cat = ReadXMLFile(); 
 		for(Book b : cat.getBooks() ) {
 				if (b.getId() == id) {
-					this.id = b.getId(id);
-					this.author = b.getAuthor(author);
-					this.title = b.getTitle(title);
-					this.genre = b.getGenre(genre);
-					this.price = b.getPrice(price);
-					this.cost = b.getCost(cost);
-					this.Publish_date = b.getPublish_date(publish_date);
-					this.description = b.getDescription(description);
+					String id = b.getId();
+					String author = b.getAuthor();
+					String title = b.getTitle();
+					Stirng genre = b.getGenre();
+					double price = b.getPrice();
+					double cost = b.getCost();
+					String Publish_date = b.getPublish_date();
+					String description = b.getDescription();
 				} else {
 					throw new BookException(); 
 				}

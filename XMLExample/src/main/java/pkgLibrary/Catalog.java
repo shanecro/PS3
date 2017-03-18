@@ -88,6 +88,7 @@ public class Catalog  {
 				throw new BookException();
 			} else {
 				cat.getBooks().add(new_book);
+				WriteXMLFile(cat);
 			}
 		}
 	}

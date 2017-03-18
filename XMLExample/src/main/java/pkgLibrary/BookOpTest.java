@@ -28,12 +28,21 @@ public class BookOpTest {
 	}
 
 	@Test
-	public void test() {
+	public void test() throws BookException {
 		Book b = new Book();
-		b.setBookId("bk101");
+		b.setBookId("bk123");
 		Catalog a = null;
 		Catalog cat = a.ReadXMLFile();//not needed, always the ReadXMLFile as cat in the add and getbook methods
-		a.addBook(cat, b);
+		cat.addBook(cat, b);
+		Book b1 = new Book();
+		b.setBookId("bk101");
+		cat.addBook(cat, b1);
+		
+		
+		assertEquals(cat.getBook(cat, "bk123"),b );
+		assertEquals(cat.addBook(cat, b1), BookException.class );
+		
+		
 		
 		
 	}

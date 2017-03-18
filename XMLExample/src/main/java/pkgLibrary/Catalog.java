@@ -79,11 +79,10 @@ public class Catalog  {
 		return cat;
 	}
 
-	public void addBook(Catalog cat, Book b) throws BookException {
+	public void addBook(Catalog cat, Book new_book) throws BookException {
 
 		cat = ReadXMLFile();
 
-		Book new_book = b;
 		/*
 		 * this.id = new_book.setId(id); this.author =
 		 * new_book.setAuthor(author); this.title = new_book.setTitle(title);

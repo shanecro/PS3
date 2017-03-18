@@ -16,7 +16,7 @@ public class BookException extends Exception {
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 
-public class Catalog extends Book {
+public class Catalog {
 
 	@XmlAttribute
 	String id;

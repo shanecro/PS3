@@ -5,7 +5,7 @@ import java.util.Date;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 
-public class Book {
+public class Book extends Catalog {
 
 	private String id;
 	private String author;

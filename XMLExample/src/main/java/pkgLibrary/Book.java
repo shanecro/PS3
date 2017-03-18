@@ -1,26 +1,41 @@
 package pkgLibrary;
 
+import java.io.File;
 import java.util.Date;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-public class Book {
+public class Book extends Catalog {
 
 	private String id;
 	private String author;
 	private String title;
 	private String genre;
 	private double price;
+	private double cost;
 	private Date publish_date;
 	private String description;
-
+	        
 	public Book() {
-
+		this.id = 'bk123';
+		this.author = 'Shane Croce';
+		this.title = 'Practice Set 3: Doing Stuff, with Stuff!';
+		this.genre = 'Horror';
+		this.price = 40.00;
+		this.cost = 32.00;
+		Date date = new Date();
+		this.publish_date = date;
+		this.description = 'Read and write an XML file and throw exceptions. Go Eagles';
+				
+		
 	}
 
-	public Book(String id, String author, String title, String genre, double price, Date publish_date, String description)
+	public Book(String id, String author, String title, String genre, double price, double cost, Date publish_date, String description)
 	{
 		super();
 		this.id = id;
@@ -28,18 +43,20 @@ public class Book {
 		this.title = title;
 		this.genre = genre;		
 		this.price = price;
+		this.cost = cost; 
 		this.publish_date = publish_date;
 		this.description = description;
 	}
+
 	
  
 
-	public String getId() {
+	public String getBookId() {
 		return id;
 	}
 
 	@XmlAttribute
-	public void setId(String id) {
+	public void setBookId(String id) {
 		this.id = id;
 	}
 
@@ -78,6 +95,16 @@ public class Book {
 	public void setPrice(double price) {
 		this.price = price;
 	}
+	
+	public double getCost() {
+		this.cost = this.price * .8;
+		return this.cost;
+	}
+
+	@XmlElement
+	public void setCost(double cost) {
+		this.cost = cost;
+	}
 
 	public Date getPublish_date() {
 		return publish_date;
@@ -96,8 +123,5 @@ public class Book {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
-	
-	
 
 }

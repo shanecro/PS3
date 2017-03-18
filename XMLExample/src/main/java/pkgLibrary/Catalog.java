@@ -105,10 +105,10 @@ public class Catalog extends Book {
 			 */
 
 		for (Book book : cat.getBooks()) {
-			if (book.getId() == new_book.getId()) {
+			if (book.getBookId() == new_book.getBookId()) {
 				throw new BookException();
 			} else {
-				WriteXMLFile(new_book);
+				cat.getBooks().add(new_book);
 			}
 		}
 	}
@@ -116,16 +116,16 @@ public class Catalog extends Book {
 	public ArrayList<Book> getBook(Catalog cat, String id) throws BookException {
 		cat = ReadXMLFile();
 		for (Book b : cat.getBooks()) {
-			if (b.getId() == id) {
-				String id = b.getId();
+			if (b.getBookId() == id) {
+				String new_id = b.getBookId();
 				String author = b.getAuthor();
 				String title = b.getTitle();
-				Stirng genre = b.getGenre();
+				String genre = b.getGenre();
 				double price = b.getPrice();
 				double cost = b.getCost();
-				String publish_date = b.getPublish_date();
+				Date publish_date = b.getPublish_date();
 				String description = b.getDescription();
-				return Book(id, author, title, genre, price, cost, publish_date, description);
+				return Book(new_id, author, title, genre, price, cost, publish_date, description);
 			} else {
 				throw new BookException();
 			}

@@ -102,6 +102,8 @@ public class Catalog extends Book {
 			 * new_book.setCost(this.cost);
 			 * new_book.setPublish_date(this.publish_date);
 			 * new_book.setDescription(this.description);
+			 * 
+			 * not needed because the book is being passed in already made 
 			 */
 
 		for (Book book : cat.getBooks()) {
@@ -113,7 +115,7 @@ public class Catalog extends Book {
 		}
 	}
 
-	public ArrayList<Book> getBook(Catalog cat, String id) throws BookException {
+	public Book getBook(Catalog cat, String id) throws BookException {
 		cat = ReadXMLFile();
 		for (Book b : cat.getBooks()) {
 			if (b.getBookId() == id) {

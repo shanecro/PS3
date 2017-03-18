@@ -126,8 +126,9 @@ public class Catalog {
 					Stirng genre = b.getGenre();
 					double price = b.getPrice();
 					double cost = b.getCost();
-					String Publish_date = b.getPublish_date();
+					String publish_date = b.getPublish_date();
 					String description = b.getDescription();
+					return Book(id, author, title, genre, price, cost, publish_date, description);
 				} else {
 					throw new BookException(); 
 				}

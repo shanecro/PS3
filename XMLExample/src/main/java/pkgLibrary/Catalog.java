@@ -10,7 +10,8 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.*;
 
-public class BookException extends Exception {}
+public class BookException extends Exception {
+}
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -82,53 +83,52 @@ public class Catalog {
 	}
 
 	public void addBook(Catalog cat, Book b) throws BookException {
-		
+
 		cat = ReadXMLFile();
-		
+
 		Book new_book = b;
-		this.id = new_book.setId(id);
-		this.author = new_book.setAuthor(author);
-		this.title = new_book.setTitle(title);
-		this.genre = new_book.setGenre(genre);
-		this.price = new_book.setPrice(price);
-		this.cost = new_book.setCost(cost);
-		this.Publish_date = new_book.setPublish_date(publish_date);
-		this.description = new_book.setDescription(description);
-		
-		/** or this?
-		 * new_book.setBookId(this.id);
-		 * new_book.setAuthor(this.author);
-		 * new_book.setTitle(this.title);
-		 * new_book.setGenre(this.genre);
-		 * new_book.setPrice(this.price);
-		 * new_book.setCost(this.cost);
-		 * new_book.setPublish_date(this.publish_date);
-		 * new_book.setDescription(this.description);
-		 */
-		
-		for (Book book : cat.getBooks() ) 
-			if(book.getId() == new_book.getId() ){
+		/*
+		 * this.id = new_book.setId(id); this.author =
+		 * new_book.setAuthor(author); this.title = new_book.setTitle(title);
+		 * this.genre = new_book.setGenre(genre); this.price =
+		 * new_book.setPrice(price); this.cost = new_book.setCost(cost);
+		 * this.Publish_date = new_book.setPublish_date(publish_date);
+		 * this.description = new_book.setDescription(description);
+		 * 
+		 *//**
+			 * or this? new_book.setBookId(this.id);
+			 * new_book.setAuthor(this.author); new_book.setTitle(this.title);
+			 * new_book.setGenre(this.genre); new_book.setPrice(this.price);
+			 * new_book.setCost(this.cost);
+			 * new_book.setPublish_date(this.publish_date);
+			 * new_book.setDescription(this.description);
+			 */
+
+		for (Book book : cat.getBooks()) {
+			if (book.getId() == new_book.getId()) {
 				throw new BookException();
-			} else { 
+			} else {
 				WriteXMLFile(new_book);
 			}
+		}
 	}
 
-
-
 	public ArrayList<Book> getBook(Catalog cat, String id) throws BookException {
-		cat = ReadXMLFile(); 
-		for(Book b : cat.getBooks() ) {
-				if (b.getId() == id) {
-					String id = b.getId();
-					String author = b.getAuthor();
-					String title = b.getTitle();
-					Stirng genre = b.getGenre();
-					double price = b.getPrice();
-					double cost = b.getCost();
-					String publish_date = b.getPublish_date();
-					String description = b.getDescription();
-					return Book(id, author, title, genre, price, cost, publish_date, description);
-				} else {
-					throw new BookException(); 
-				}
+		cat = ReadXMLFile();
+		for (Book b : cat.getBooks()) {
+			if (b.getId() == id) {
+				String id = b.getId();
+				String author = b.getAuthor();
+				String title = b.getTitle();
+				Stirng genre = b.getGenre();
+				double price = b.getPrice();
+				double cost = b.getCost();
+				String publish_date = b.getPublish_date();
+				String description = b.getDescription();
+				return Book(id, author, title, genre, price, cost, publish_date, description);
+			} else {
+				throw new BookException();
+			}
+		}
+	}
+}

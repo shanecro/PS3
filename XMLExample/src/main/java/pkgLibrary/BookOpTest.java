@@ -40,7 +40,11 @@ public class BookOpTest {
 		
 		
 		assertEquals(cat.getBook(cat, "bk123"),b );
+		assertEquals(cat.getBooks().size(), 13 );
+	
+		
 		assertEquals(cat.addBook(cat, b1), BookException.class );
+		assertEquals(cat.getBooks().size(), 12 );
 		
 		
 		

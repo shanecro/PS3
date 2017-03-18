@@ -12,7 +12,6 @@ public class BookOpTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		
 	}
 
 	@AfterClass

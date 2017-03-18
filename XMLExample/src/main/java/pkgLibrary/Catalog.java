@@ -95,15 +95,15 @@ public class Catalog {
 		this.Publish_date = new_book.setPublish_date(publish_date);
 		this.description = new_book.setDescription(description);
 		
-		/** or this 
+		/** or this?
 		 * new_book.setBookId(this.id);
 		 * new_book.setAuthor(this.author);
-		 * this.title = new_book.setTitle(title);
-		 * this.genre = new_book.setGenre(genre);
-		 * this.price = new_book.setPrice(price);
-		 * this.cost = new_book.setCost(cost);
-		 * this.Publish_date = new_book.setPublish_date(publish_date);
-		 * this.description = new_book.setDescription(description);
+		 * new_book.setTitle(this.title);
+		 * new_book.setGenre(this.genre);
+		 * new_book.setPrice(this.price);
+		 * new_book.setCost(this.cost);
+		 * new_book.setPublish_date(this.publish_date);
+		 * new_book.setDescription(this.description);
 		 */
 		
 		for (Book book : cat.getBooks() ) 
